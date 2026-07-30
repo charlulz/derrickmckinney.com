@@ -28,6 +28,18 @@ test('the social sharing image has the recommended dimensions', function () {
         ->and($dimensions['mime'])->toBe('image/jpeg');
 });
 
+test('the campaign branding assets are available', function (string $asset) {
+    expect(public_path($asset))->toBeReadableFile();
+})->with([
+    'favicon.ico',
+    'favicon.svg',
+    'apple-touch-icon.png',
+    'icon-192.png',
+    'icon-512.png',
+    'images/mckinney-mark.svg',
+    'site.webmanifest',
+]);
+
 test('the campaign landing page opts out of the authenticated app layout', function () {
     $component = 'home';
 

@@ -21,14 +21,24 @@ export function CampaignHeader({
             <div className="campaign-container flex min-h-18 items-center justify-between gap-5 px-5 sm:px-8 lg:px-10">
                 <a
                     href="#top"
-                    className="campaign-focus-ring rounded-sm"
+                    className="campaign-focus-ring flex items-center gap-2.5 rounded-sm"
                     aria-label={`${content.candidateName} home`}
                 >
-                    <span className="campaign-display text-2xl tracking-tight text-navy">
-                        {content.wordmark}
-                    </span>
-                    <span className="mt-0.5 block text-[0.7rem] font-semibold tracking-[0.08em] text-kentucky uppercase">
-                        {content.office}
+                    <img
+                        src="/images/mckinney-mark.svg"
+                        width={42}
+                        height={42}
+                        alt=""
+                        aria-hidden
+                        className="size-10 shrink-0 sm:size-11"
+                    />
+                    <span>
+                        <span className="campaign-display block text-2xl tracking-tight text-navy">
+                            {content.wordmark}
+                        </span>
+                        <span className="mt-0.5 block text-[0.7rem] font-semibold tracking-[0.08em] text-kentucky uppercase">
+                            {content.office}
+                        </span>
                     </span>
                 </a>
 
