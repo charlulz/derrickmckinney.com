@@ -1,8 +1,4 @@
-/**
- * Campaign content configuration.
- * All placeholder strings are marked clearly until approved copy is supplied.
- * Do not treat placeholder text as verified biography, policy, or endorsements.
- */
+/** Campaign content configuration. Draft messaging requires campaign approval. */
 
 export type CampaignIssue = {
     id: string;
@@ -45,9 +41,11 @@ export type CampaignContent = {
     issues: CampaignIssue[];
     bioTitle: string;
     bioBody: string[];
-    bioPhotoLabel: string;
+    bioValues: string[];
+    bioPhotoAlt: string;
     signupTitle: string;
     signupIntro: string;
+    signupBenefits: string[];
     signupSubmit: string;
     signupPrivacy: string;
     finalCtaTitle: string;
@@ -118,30 +116,33 @@ export const campaignContent: CampaignContent = {
     ],
     bioTitle: 'Meet Derrick',
     bioBody: [
-        '[PLACEHOLDER] Introduce Derrick with approved biographical facts only—family, work, and community ties in Grayson, Kentucky.',
-        '[PLACEHOLDER] Add a second short paragraph on local involvement once verified. Do not invent record, titles, or affiliations.',
+        'For Derrick, leadership starts with showing up, listening carefully, and treating every resident with respect.',
+        'He is running to bring a practical, community-minded approach to City Hall—one centered on clear communication, steady work, and decisions guided by what is best for Grayson.',
     ],
-    bioPhotoLabel:
-        'Photo placeholder: candid portrait or community setting in Grayson, Kentucky',
+    bioValues: ['Present', 'Practical', 'People-first'],
+    bioPhotoAlt:
+        'Portrait of Derrick McKinney standing on a tree-lined downtown sidewalk',
     signupTitle: 'Stay Connected',
     signupIntro:
-        '[PLACEHOLDER] Get campaign updates by email and text. We’ll only ask for what we need.',
+        'Winning a local campaign takes neighbors who are ready to stay informed, lend a hand, and help carry the conversation across Grayson.',
+    signupBenefits: [
+        'Receive campaign news and event updates',
+        'Hear about opportunities to volunteer',
+        'Help Derrick connect with more neighbors',
+    ],
     signupSubmit: 'Join the Campaign',
     signupPrivacy:
-        '[PLACEHOLDER] Brief privacy note: how contact info will be used. Link to a full privacy policy when available.',
-    finalCtaTitle: 'Ready to help move Grayson forward?',
+        'By joining, you agree to receive campaign updates by email and text. Message and data rates may apply. Reply STOP to opt out.',
+    finalCtaTitle: 'Let’s move Grayson forward—together.',
     finalCtaBody:
-        '[PLACEHOLDER] Invite neighbors to join—volunteer, share, or stay informed. Keep the ask warm and local.',
-    contactEmailLabel: '[PLACEHOLDER] campaign@example.com',
-    contactPhoneLabel: '[PLACEHOLDER] (000) 000-0000',
-    socialLinks: [
-        { label: 'Facebook', href: '#facebook-placeholder' },
-        { label: 'Instagram', href: '#instagram-placeholder' },
-    ],
+        'Every conversation, every shared post, and every neighbor who gets involved helps build a campaign rooted in the community it hopes to serve.',
+    contactEmailLabel: '',
+    contactPhoneLabel: '',
+    socialLinks: [],
     authorizationDisclaimer:
-        '[PLACEHOLDER] Paid for by [Committee Name]. [Required authorization language goes here.]',
+        'Campaign authorization statement pending committee confirmation. This statement must be finalized before public launch.',
     privacyNote:
-        '[PLACEHOLDER] Privacy policy link and short statement about data use.',
+        'Your information will be used only for campaign communications and participation.',
 };
 
 /** Verified endorsements only. Empty until confirmed content is provided. */
