@@ -17,6 +17,13 @@ type HomePageProps = {
     focus?: string | null;
     endorsements?: CampaignEndorsement[];
     signupStatus?: string | null;
+    social: {
+        title: string;
+        description: string;
+        url: string;
+        image: string;
+        imageAlt: string;
+    };
 };
 
 function scrollToId(id: string) {
@@ -28,6 +35,7 @@ export default function Home({
     focus = null,
     endorsements = campaignEndorsements,
     signupStatus = null,
+    social,
 }: HomePageProps) {
     const content = campaignContent;
 
@@ -45,11 +53,95 @@ export default function Home({
 
     return (
         <CampaignLayout>
-            <Head title={`${content.candidateName} ${content.office}`}>
+            <Head title={social.title}>
                 <meta
                     head-key="description"
                     name="description"
-                    content={`${content.candidateName} for Mayor of Grayson, Kentucky. Local leadership for our community.`}
+                    content={social.description}
+                />
+                <link head-key="canonical" rel="canonical" href={social.url} />
+
+                <meta head-key="og:type" property="og:type" content="website" />
+                <meta
+                    head-key="og:url"
+                    property="og:url"
+                    content={social.url}
+                />
+                <meta
+                    head-key="og:title"
+                    property="og:title"
+                    content={social.title}
+                />
+                <meta
+                    head-key="og:description"
+                    property="og:description"
+                    content={social.description}
+                />
+                <meta
+                    head-key="og:image"
+                    property="og:image"
+                    content={social.image}
+                />
+                <meta
+                    head-key="og:image:secure_url"
+                    property="og:image:secure_url"
+                    content={social.image}
+                />
+                <meta
+                    head-key="og:image:type"
+                    property="og:image:type"
+                    content="image/jpeg"
+                />
+                <meta
+                    head-key="og:image:width"
+                    property="og:image:width"
+                    content="1200"
+                />
+                <meta
+                    head-key="og:image:height"
+                    property="og:image:height"
+                    content="630"
+                />
+                <meta
+                    head-key="og:image:alt"
+                    property="og:image:alt"
+                    content={social.imageAlt}
+                />
+                <meta
+                    head-key="og:site_name"
+                    property="og:site_name"
+                    content="Derrick McKinney for Mayor"
+                />
+                <meta
+                    head-key="og:locale"
+                    property="og:locale"
+                    content="en_US"
+                />
+
+                <meta
+                    head-key="twitter:card"
+                    name="twitter:card"
+                    content="summary_large_image"
+                />
+                <meta
+                    head-key="twitter:title"
+                    name="twitter:title"
+                    content={social.title}
+                />
+                <meta
+                    head-key="twitter:description"
+                    name="twitter:description"
+                    content={social.description}
+                />
+                <meta
+                    head-key="twitter:image"
+                    name="twitter:image"
+                    content={social.image}
+                />
+                <meta
+                    head-key="twitter:image:alt"
+                    name="twitter:image:alt"
+                    content={social.imageAlt}
                 />
             </Head>
 

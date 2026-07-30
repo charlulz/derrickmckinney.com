@@ -22,6 +22,13 @@ class HomeController extends Controller
             'focus' => in_array($focus, $allowedFocus, true) ? $focus : null,
             'endorsements' => [],
             'signupStatus' => $request->session()->get('signup'),
+            'social' => [
+                'title' => 'Derrick McKinney for Mayor of Grayson',
+                'description' => 'Together, we can build a stronger Grayson. Join Derrick McKinney’s campaign for practical, people-first leadership.',
+                'url' => route('home'),
+                'image' => url('/images/derrick-mckinney-social-share.jpg'),
+                'imageAlt' => 'Derrick McKinney and his wife in front of the Carter County Courthouse with campaign text',
+            ],
         ]);
     }
 }

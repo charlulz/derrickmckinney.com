@@ -11,7 +11,21 @@ test('the campaign home page renders', function () {
         ->component('home')
         ->where('focus', null)
         ->has('endorsements', 0)
+        ->where('social.title', 'Derrick McKinney for Mayor of Grayson')
+        ->where('social.url', route('home'))
+        ->where('social.image', url('/images/derrick-mckinney-social-share.jpg'))
     );
+});
+
+test('the social sharing image has the recommended dimensions', function () {
+    $shareImage = public_path('images/derrick-mckinney-social-share.jpg');
+    $dimensions = getimagesize($shareImage);
+
+    expect($shareImage)->toBeReadableFile()
+        ->and($dimensions)->not->toBeFalse()
+        ->and($dimensions[0])->toBe(1200)
+        ->and($dimensions[1])->toBe(630)
+        ->and($dimensions['mime'])->toBe('image/jpeg');
 });
 
 test('the campaign landing page opts out of the authenticated app layout', function () {
