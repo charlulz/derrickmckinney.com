@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    'google' => [
+        'analytics_id' => env('GOOGLE_ANALYTICS_ID'),
+    ],
+
+    'gohighlevel' => [
+        'api_key' => env('GHL_API_KEY'),
+        'location_id' => env('GHL_LOCATION_ID'),
+        'base_url' => env('GHL_BASE_URL', 'https://services.leadconnectorhq.com'),
+        'version' => env('GHL_API_VERSION', '2021-07-28'),
+    ],
+
 ];

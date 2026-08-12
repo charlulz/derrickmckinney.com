@@ -27,7 +27,7 @@ class HomeController extends Controller
                 'description' => 'Together, we can build a stronger Grayson. Join Derrick McKinney’s campaign for practical, people-first leadership.',
                 'url' => route('home'),
                 'image' => url('/images/derrick-mckinney-social-share.jpg'),
-                'imageAlt' => 'Derrick McKinney and his wife in front of the Carter County Courthouse with campaign text',
+                'imageAlt' => 'Derrick McKinney for Mayor of Grayson campaign graphic',
             ],
         ]);
     }

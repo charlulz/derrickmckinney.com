@@ -107,18 +107,6 @@ export function CampaignFooter({ content }: CampaignFooterProps) {
                         </p>
                     </div>
                     <div className="space-y-2 lg:max-w-md lg:text-right">
-                        <p>
-                            Courthouse reference photograph by{' '}
-                            <a
-                                href="https://commons.wikimedia.org/wiki/File:Carter_County%2C_Kentucky_courthouse.jpg"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="campaign-focus-ring rounded-sm underline underline-offset-2 hover:text-cream"
-                            >
-                                W.marsh
-                            </a>{' '}
-                            / CC BY-SA.
-                        </p>
                         <p className="font-semibold text-cream/65">
                             {content.authorizationDisclaimer}
                         </p>

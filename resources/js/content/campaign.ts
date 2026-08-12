@@ -68,7 +68,7 @@ export const campaignContent: CampaignContent = {
     heroSupporting:
         'Join Derrick McKinney’s campaign for practical, people-first leadership and a city where every neighbor has a voice.',
     heroPhotoAlt:
-        'Derrick McKinney and his wife standing in front of the Carter County Courthouse in Grayson',
+        'Derrick McKinney seated at a table, signing a document',
     whyTitle: 'Why I’m Running',
     whyStatement:
         'Grayson deserves leadership that listens carefully, works honestly, and keeps its focus on the people who call this city home.',
@@ -121,7 +121,7 @@ export const campaignContent: CampaignContent = {
     ],
     bioValues: ['Present', 'Practical', 'People-first'],
     bioPhotoAlt:
-        'Portrait of Derrick McKinney standing on a tree-lined downtown sidewalk',
+        'Derrick McKinney seated at a table, signing a document',
     signupTitle: 'Stay Connected',
     signupIntro:
         'Winning a local campaign takes neighbors who are ready to stay informed, lend a hand, and help carry the conversation across Grayson.',
@@ -139,8 +139,7 @@ export const campaignContent: CampaignContent = {
     contactEmailLabel: '',
     contactPhoneLabel: '',
     socialLinks: [],
-    authorizationDisclaimer:
-        'Campaign authorization statement pending committee confirmation. This statement must be finalized before public launch.',
+    authorizationDisclaimer: 'Paid for by Derrick McKinney',
     privacyNote:
         'Your information will be used only for campaign communications and participation.',
 };

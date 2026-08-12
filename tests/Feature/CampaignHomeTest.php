@@ -118,7 +118,8 @@ test('the completed campaign page has no visible content placeholders', function
         ->not->toContain('#facebook-placeholder')
         ->not->toContain('#instagram-placeholder')
         ->toContain("finalCtaTitle: 'Let’s move Grayson forward—together.'")
-        ->toContain('signupBenefits: [');
+        ->toContain('signupBenefits: [')
+        ->toContain("authorizationDisclaimer: 'Paid for by Derrick McKinney'");
 });
 
 test('the footer links to the public website source', function () {
@@ -127,6 +128,34 @@ test('the footer links to the public website source', function () {
     expect($footer)
         ->toContain('https://github.com/charlulz/derrickmckinney.com')
         ->toContain('View this website’s public source');
+});
+
+test('social metadata is present in the server rendered document head', function () {
+    $response = $this->get(route('home'));
+
+    $response
+        ->assertSuccessful()
+        ->assertSee('property="og:title" content="Derrick McKinney for Mayor of Grayson"', false)
+        ->assertSee('property="og:image"', false)
+        ->assertSee(url('/images/derrick-mckinney-social-share.jpg'), false)
+        ->assertSee('name="twitter:card" content="summary_large_image"', false);
+});
+
+test('the google analytics tag is present when configured', function () {
+    config(['services.google.analytics_id' => 'G-MZQJRYKXJ0']);
+
+    $this->get(route('home'))
+        ->assertSuccessful()
+        ->assertSee('https://www.googletagmanager.com/gtag/js?id=G-MZQJRYKXJ0', false)
+        ->assertSee("gtag('config', \"G-MZQJRYKXJ0\")", false);
+});
+
+test('the google analytics tag is omitted when not configured', function () {
+    config(['services.google.analytics_id' => null]);
+
+    $this->get(route('home'))
+        ->assertSuccessful()
+        ->assertDontSee('googletagmanager.com/gtag/js', false);
 });
 
 test('the campaign home page accepts a verified focus query', function () {

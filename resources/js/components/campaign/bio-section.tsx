@@ -37,11 +37,11 @@ export function BioSection({ content }: BioSectionProps) {
                                 srcSet="/images/derrick-bio-640.jpg 640w, /images/derrick-bio-960.jpg 960w"
                                 sizes="(min-width: 1024px) 42vw, 90vw"
                                 width={960}
-                                height={1707}
+                                height={1200}
                                 alt={content.bioPhotoAlt}
                                 loading="lazy"
                                 decoding="async"
-                                className="aspect-[4/5] w-full object-cover object-[center_30%]"
+                                className="aspect-[4/5] w-full object-cover object-[center_22%]"
                             />
                         </picture>
 

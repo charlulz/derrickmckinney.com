@@ -40,22 +40,22 @@ export function CampaignHero({
                         src="/images/derrick-hero-1600.jpg"
                         srcSet={JPEG_SRCSET}
                         sizes="100vw"
-                        width={1672}
-                        height={941}
+                        width={1600}
+                        height={900}
                         alt={content.heroPhotoAlt}
                         fetchPriority="high"
                         decoding="async"
-                        className="aspect-[5/4] w-full object-cover object-[68%_center] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:object-[62%_center]"
+                        className="aspect-[5/4] w-full object-cover object-[center_22%] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:object-[center_20%]"
                     />
                 </picture>
 
                 <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/15 to-transparent lg:bg-gradient-to-r lg:from-navy-deep lg:from-8% lg:via-navy-deep/90 lg:via-42% lg:to-transparent lg:to-72%"
+                    className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/35 to-navy-deep/10 lg:bg-gradient-to-r lg:from-navy-deep lg:from-5% lg:via-navy-deep/88 lg:via-40% lg:to-transparent lg:to-78%"
                 />
                 <div
                     aria-hidden
-                    className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-navy-deep/45 lg:via-transparent lg:to-navy-deep/10"
+                    className="absolute inset-0 hidden lg:block lg:bg-gradient-to-t lg:from-navy-deep/55 lg:via-transparent lg:to-navy-deep/15"
                 />
             </div>
 
